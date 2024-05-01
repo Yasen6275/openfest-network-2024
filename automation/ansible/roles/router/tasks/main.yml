@@ -1,0 +1,3 @@
+---
+- name: Configure sysctl
+  ansible.builtin.include_tasks: sysctl.yml

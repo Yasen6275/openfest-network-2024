@@ -1,0 +1,12 @@
+---
+
+- name: Run common tasks
+  hosts: all
+  roles:
+    - common
+
+- name: Router
+  hosts: routers
+  roles:
+    - firewall
+    - router

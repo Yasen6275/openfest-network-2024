@@ -1,0 +1,22 @@
+---
+
+- name: Create sysctl.d
+  ansible.builtin.file:
+    name: /etc/sysctl.d
+    state: directory
+    mode: "755"
+- name: Enable IPv4 routing
+  ansible.posix.sysctl:
+    name: net.ipv4.ip_forward
+    value: '1'
+    sysctl_file: /etc/sysctl.d/router.conf
+    state: present
+    reload: true
+
+- name: Enable IPv6 routing
+  ansible.posix.sysctl:
+    name: net.ipv6.conf.all.forwarding
+    value: '1'
+    sysctl_file: /etc/sysctl.d/router.conf
+    state: present
+    reload: true

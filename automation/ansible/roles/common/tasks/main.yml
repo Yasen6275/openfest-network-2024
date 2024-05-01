@@ -1,0 +1,14 @@
+---
+
+- name: Add ssh keys for root
+  ansible.builtin.include_tasks: root_sshkeys.yml
+
+- name: Set hostname
+  ansible.builtin.hostname:
+    name: "{{ hostname }}"
+  when: hostname is defined
+
+- name: Install sudo as it's needed for 'become'
+  ansible.builtin.package:
+    name: sudo
+    state: present

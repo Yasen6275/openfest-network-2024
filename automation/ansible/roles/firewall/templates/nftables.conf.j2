@@ -1,0 +1,38 @@
+#!/usr/sbin/nft -f
+
+flush ruleset
+
+include "/etc/nftables/global.d/*.nft";
+
+table inet filter {
+	include "/etc/nftables/filter.d/*.nft";
+
+	chain input {
+		type filter hook input priority filter; policy {{ firewall.input_policy | default('drop') }};
+
+		iif lo accept
+
+		# Anti-klonootryazvane
+		tcp dport ssh accept
+		ct state established,related accept
+
+		# Don't block ICMP
+		ip protocol icmp accept
+		ip6 nexthdr icmpv6 accept
+
+		include "/etc/nftables/input.d/*.nft";
+
+		# Should we reject or drop?
+		ip protocol tcp reject with tcp reset
+		ip6 nexthdr tcp reject with tcp reset
+		reject
+	}
+
+	chain forward {
+		type filter hook forward priority filter; policy {{ firewall.forward_policy | default('drop') }};
+	}
+
+	chain output {
+		type filter hook output priority filter; policy {{ firewall.output_policy | default('accept') }};
+	}
+}

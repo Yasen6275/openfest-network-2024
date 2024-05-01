@@ -1,0 +1,47 @@
+---
+
+- name: Install nftables
+  ansible.builtin.package:
+    name: nftables
+    state: present
+
+- name: Get available services
+  ansible.builtin.service_facts:
+
+- name: Create service file if it doesn't exist already
+  ansible.builtin.copy:
+    src: nftables.service
+    dest: /etc/systemd/system/nftables.service
+    state: present
+    mode: "644"
+  when: ansible_facts.services['nftables.service'] is not defined
+
+- name: Add config file
+  ansible.builtin.template:
+    src: nftables.conf.j2
+    dest: "{{ nftables_main_file[ansible_os_family] |
+       default('/etc/nftables.conf') }}"
+    mode: "644"
+  vars:
+    nftables_main_file:
+      Debian: /etc/nftables.conf
+      RedHat: /etc/nftables/main.nft
+
+- name: Create subdirs
+  ansible.builtin.file:
+    name: "{{ item }}"
+    state: directory
+    mode: "755"
+  with_items:
+    - /etc/nftables/input.d
+    - /etc/nftables/forward.d
+    - /etc/nftables/output.d
+    - /etc/nftables/filter.d
+    - /etc/nftables/global.d
+
+- name: Enable and start nftables
+  ansible.builtin.systemd_service:
+    name: nftables.service
+    enabled: true
+    state: started
+    daemon_reload: true

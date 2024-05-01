@@ -1,0 +1,8 @@
+---
+
+global_packages:
+  Debian:
+    - vim
+    - mtr-tiny
+    - traceroute
+    - tcpdump
