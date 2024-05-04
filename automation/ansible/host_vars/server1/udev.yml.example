@@ -1,0 +1,5 @@
+---
+udev_rules:
+  nic:
+    - 'SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="52:54:00:ce:2a:b2", NAME="xgei0"'
+    - 'SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="52:54:00:74:5b:6e", NAME="xgei1"'

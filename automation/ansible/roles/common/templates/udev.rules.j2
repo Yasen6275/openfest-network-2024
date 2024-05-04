@@ -1,0 +1,9 @@
+{%- if item.value is string -%}
+{{ item.value }}
+{%- elif item.value is iterable -%}
+{% for val in item.value -%}
+{{ val }}
+{% endfor -%}
+{%- else -%}
+{{ ("udev_rules for " + item.key + " are incorrect")/0 }}
+{%- endif -%}

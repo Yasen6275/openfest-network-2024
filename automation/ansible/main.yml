@@ -5,8 +5,15 @@
   roles:
     - common
 
-- name: Router
+- name: Set up routers
   hosts: routers
   roles:
     - firewall
     - router
+
+- name: Restart if required
+  hosts: all
+  tasks:
+    - name: Reboot
+      ansible.builtin.reboot:
+      when: restart_required is defined

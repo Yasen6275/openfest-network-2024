@@ -1,0 +1,7 @@
+---
+- name: update initramfs
+  ansible.builtin.command: "update-initramfs -u"
+  # register: restart_required
+
+- name: trigger udev add
+  ansible.builtin.command: "udevadm trigger --action=add"

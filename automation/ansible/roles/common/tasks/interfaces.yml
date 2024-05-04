@@ -1,0 +1,27 @@
+---
+- name: Check whether vlan config is valid
+  ansible.builtin.assert:
+    that:
+      - item.value.name is defined if item.value.type == "eth"
+      - item.value.parent is defined if item.value.type == "vlan"
+      - item.value.parent in interfaces if item.value.parent is defined
+  with_items:
+    - interfaces
+
+- name: Create physical interfaces
+  community.general.interfaces_file:
+    dest: "/etc/network/interfaces.d/{{ item.key }}.conf"
+    iface: "{{ item.value.name }}"
+  with_items:
+    - interfaces | select(item.value.type != "vlan")
+
+- name: Create vlan interfaces
+  community.general.interfaces_file:
+    dest: "/etc/network/interfaces.d/{{ item.key }}.conf"
+    iface: "{{ interfaces[item.value.parent].name }}.{{ item.value.vlan_id }}"
+  with_items:
+    - interfaces | select(item.value.type == "vlan")
+
+- name: Restart networking
+  ansible.builtin.notify:
+    - restart networking
