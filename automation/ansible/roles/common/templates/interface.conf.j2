@@ -1,0 +1,41 @@
+{% if not(item.shutdown is defined) or not(item.shutdown) %}
+auto {{ item.key }}
+{% endif %}
+
+{% if 'ipv4' in item.value %}
+{%- set props = item.value.ipv4 -%}
+iface {{ item.key }} inet {{ props.method }}
+{% if props.method == 'static' %}
+	address {{ props.address }}
+	{% if 'nameservers' in props -%}
+	dns-nameservers {{ props.nameservers | join(' ') }}
+	{% endif -%}
+	{% if 'gateway' in props -%}
+	{% if not(props.metric is defined) -%}
+	gateway {{ props.gateway }}
+	{% else -%}
+	post-up   /sbin/ip route add default via {{ props.gateway }} dev {{ item.key }} metric {{ props.metric }}
+	post-down /sbin/ip route del default via {{ props.gateway }} dev {{ item.key }} metric {{ props.metric }}
+	{% endif -%}
+	{% endif -%}
+{%- endif %}
+{% endif %}
+
+{% if 'ipv6' in item.value -%}
+{%- set props = item.value.ipv6 -%}
+iface {{ item.key }} inet6 {{ props.method }}
+{% if props.method == 'static' %}
+	address {{ props.address }}
+	{% if 'nameservers' in props -%}
+	dns-nameservers {{ props.nameservers | join(' ') }}
+	{% endif -%}
+	{% if 'gateway' in props -%}
+	{% if not(props.metric is defined) -%}
+	gateway {{ props.gateway }}
+	{% else -%}
+	post-up   /sbin/ip -6 route add default via {{ props.gateway }} dev {{ item.key }} metric {{ props.metric }}
+	post-down /sbin/ip -6 route del default via {{ props.gateway }} dev {{ item.key }} metric {{ props.metric }}
+	{% endif -%}
+	{% endif -%}
+{%- endif %}
+{% endif %}

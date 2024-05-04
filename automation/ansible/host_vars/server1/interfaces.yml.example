@@ -1,0 +1,24 @@
+---
+interfaces:
+  xgei0.100:
+    ipv4:
+      method: static
+      address: 192.0.2.2/24
+      nameservers:
+        - 8.8.8.8
+        - 8.8.4.4
+      gateway: 192.0.2.1
+      metric: 500
+    ipv6:
+      method: static
+      address: 2001:db8::2/64
+      nameservers:
+        - 2001:4860:4860::8888
+        - 2001:4860:4860::8844
+      gateway: 2001:db8::1
+      metric: 600
+  xgei0.101:
+    ipv4:
+      method: manual
+    ipv6:
+      method: auto

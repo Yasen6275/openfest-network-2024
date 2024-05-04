@@ -1,7 +1,14 @@
 ---
-- name: update initramfs
+- name: Restart networking
+  ansible.builtin.service:
+    name: networking
+    state: restarted
+
+- name: Update initramfs
   ansible.builtin.command: "update-initramfs -u"
+  changed_when: true
   # register: restart_required
 
-- name: trigger udev add
+- name: Trigger udev add
   ansible.builtin.command: "udevadm trigger --action=add"
+  changed_when: true

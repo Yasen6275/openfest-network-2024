@@ -13,5 +13,5 @@
   with_items:
     - "{{ udev_rules | dict2items }}"
   notify:
-    - update initramfs
-    - trigger udev add
+    - Update initramfs
+    - Trigger udev add

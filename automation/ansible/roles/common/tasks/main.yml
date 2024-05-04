@@ -30,3 +30,7 @@
 - name: Configure udev rules
   ansible.builtin.include_tasks: udev.yml
   when: udev_rules is defined
+
+- name: Configure network interfaces
+  ansible.builtin.include_tasks: interfaces.yml
+  when: interfaces is defined
