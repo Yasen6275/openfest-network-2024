@@ -1,0 +1,43 @@
+127.0.0.1	localhost
+
+#local records
+
+10.20.0.1 sonata
+10.20.0.11 sw-core
+10.20.0.12 core-backup
+10.20.0.15 sw-floor0
+10.20.0.16 sw-barier
+10.20.0.21 sw-voc-a
+10.20.0.22 sw-voc-b
+10.20.0.23 sw-voc-z
+10.20.0.24 sw-gkc
+10.20.0.25 sw-rec-ja
+10.20.0.26 sw-team
+10.20.0.27 sw-workshop
+10.20.0.28 sw-noc
+
+10.20.0.51 ap-voc-a
+10.20.0.52 ap-ws-front
+10.20.0.53 ap-voc-b
+10.20.0.54 ap-lector-a
+10.20.0.55 ap-lector-b
+10.20.0.56 ap-ws-back
+10.20.0.57 ap-noc
+10.20.0.58 ap-ws0-left
+10.20.0.59 ap-ws0-right
+10.20.0.60 ap-voc-z
+
+10.26.0.10 phone-noc
+10.26.0.11 phone-voc-a
+10.26.0.12 phone-voc-b
+10.26.0.13 phone-voc-z
+10.26.0.14 phone-rec-ja
+10.26.0.15 phone-rec-z
+10.26.0.16 phone-team
+
+10.23.0.1 sonata
+10.24.0.1 sonata
+10.25.0.1 sonata
+10.26.0.1 sonata
+10.27.0.1 sonata
+

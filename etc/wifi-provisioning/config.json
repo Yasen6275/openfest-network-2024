@@ -1,0 +1,82 @@
+{
+  "1": {
+    "name": "ap-voc-a",
+    "ip_addr": "10.20.0.51",
+    "wifi_channel_24": 13,
+    "wifi_channel_5": 128,
+    "power_24": 20,
+    "power_5": 22
+  },
+  "2": {
+    "name": "ap-ws-front",
+    "ip_addr": "10.20.0.52",
+    "wifi_channel_24": 1,
+    "wifi_channel_5": 116,
+    "power_24": 16,
+    "power_5": 19
+  },
+  "3": {
+    "name": "ap-voc-b",
+    "ip_addr": "10.20.0.53",
+    "wifi_channel_24": 1,
+    "wifi_channel_5": 108,
+    "power_24": 20,
+    "power_5": 21
+  },
+  "4": {
+    "name": "ap-lector-a",
+    "ip_addr": "10.20.0.54",
+    "wifi_channel_24": 5,
+    "wifi_channel_5": 64,
+    "power_24": 17,
+    "power_5": 22
+  },
+  "5": {
+    "name": "ap-lector-b",
+    "ip_addr": "10.20.0.55",
+    "wifi_channel_24": 9,
+    "wifi_channel_5": 120,
+    "power_24": 11,
+    "power_5": 14
+  },
+  "6": {
+    "name": "ap-ws-back",
+    "ip_addr": "10.20.0.56",
+    "wifi_channel_24": 9,
+    "wifi_channel_5": 100,
+    "power_24": 16,
+    "power_5": 8
+  },
+  "7": {
+    "name": "ap-noc",
+    "ip_addr": "10.20.0.57",
+    "wifi_channel_24": 6,
+    "wifi_channel_5": 132,
+    "power_24": 14,
+    "power_5": 7
+  },
+  "8": {
+    "name": "ap-ws0-left",
+    "ip_addr": "10.20.0.58",
+    "wifi_channel_24": 1,
+    "wifi_channel_5": 116,
+    "power_24": 15,
+    "power_5": 20
+  },
+  "9": {
+    "name": "ap-ws0-right",
+    "ip_addr": "10.20.0.59",
+    "wifi_channel_24": 11,
+    "wifi_channel_5": 100,
+    "power_24": 14,
+    "power_5": 13
+  },
+  "11": {
+    "name": "ap-voc-z",
+    "ip_addr": "10.20.0.60",
+    "wifi_channel_24": 8,
+    "wifi_channel_5": 132,
+    "power_24": 20,
+    "power_5": 22
+  }
+}

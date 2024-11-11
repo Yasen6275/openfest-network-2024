@@ -1,0 +1,307 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug eno1
+
+allow-hotplug eno2
+
+# A1 backup
+auto eno2.10
+iface eno2.10 inet dhcp
+
+auto eno2.20
+iface eno2.20 inet static
+	address 10.20.0.1/24
+
+auto eno2.207
+iface eno2.207 inet static
+	address @_ADDRESS_@/@_PREFIX_@
+	post-up /sbin/ip r add 1.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 2.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 3.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 4.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 5.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 6.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 7.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 8.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 9.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 11.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 12.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 13.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 14.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 15.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 16.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 17.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 18.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 19.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 20.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 21.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 22.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 23.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 24.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 25.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 26.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 27.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 28.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 29.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 30.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 31.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 32.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 33.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 34.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 35.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 36.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 37.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 38.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 39.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 40.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 41.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 42.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 43.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 44.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 45.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 46.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 47.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 48.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 49.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 50.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 51.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 52.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 53.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 54.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 55.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 56.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 57.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 58.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 59.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 60.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 61.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 62.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 63.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 64.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 65.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 66.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 67.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 68.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 69.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 70.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 71.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 72.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 73.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 74.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 75.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 76.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 77.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 78.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 79.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 80.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 81.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 82.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 83.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 84.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 85.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 86.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 87.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 88.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 89.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 90.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 91.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 92.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 93.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 94.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 95.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 96.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 97.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 98.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 99.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 100.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 101.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 102.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 103.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 104.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 105.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 106.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 107.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 108.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 109.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 110.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 111.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 112.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 113.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 114.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 115.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 116.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 117.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 118.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 119.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 120.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 121.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 122.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 123.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 124.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 125.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 126.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 127.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 128.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 129.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 130.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 131.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 132.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 133.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 134.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 135.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 136.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 137.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 138.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 139.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 140.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 141.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 142.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 143.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 144.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 145.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 146.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 147.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 148.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 149.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 150.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 151.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 152.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 153.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 154.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 155.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 156.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 157.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 158.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 159.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 160.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 161.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 162.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 163.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 164.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 165.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 166.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 167.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 168.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 169.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 170.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 171.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 172.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 173.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 174.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 175.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 176.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 177.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 178.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 179.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 180.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 181.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 182.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 183.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 184.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 185.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 186.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 187.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 188.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 189.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 190.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 191.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 192.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 193.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 194.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 195.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 196.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 197.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 198.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 199.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 200.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 201.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 202.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 203.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 204.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 205.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 206.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 207.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 208.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 209.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 210.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 211.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 212.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 213.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 214.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 215.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 216.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 217.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 218.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 219.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 220.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 221.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 222.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 223.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 224.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 225.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 226.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 227.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 228.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 229.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 230.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 231.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 232.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 233.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 234.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 235.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 236.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 237.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 238.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 239.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 240.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 241.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 242.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 243.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 244.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 245.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 246.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 247.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 248.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 249.0.0.0/8 via @_GATEWAY_@
+	post-up /sbin/ip r add 250.0.0.0/8 via @_GATEWAY_@
+
+auto eno2.21
+iface eno2.21 inet static
+	address 10.21.0.1/24
+
+auto eno2.22
+iface eno2.22 inet static
+	address 10.22.0.1/22
+
+auto eno2.23
+iface eno2.23 inet static
+	address 10.23.0.1/24
+
+auto eno2.24
+iface eno2.24 inet static
+	address 10.24.0.1/24
+
+auto eno2.25
+iface eno2.25 inet static
+	address 10.25.0.1/24
+
+auto eno2.26
+iface eno2.26 inet static
+	address 10.26.0.1/24
+
+auto eno2.27
+iface eno2.27 inet static
+	address 10.27.0.1/24
+
+auto eno2.28
+iface eno2.28 inet static
+	address 10.22.4.1/22
+

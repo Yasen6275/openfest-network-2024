@@ -1,0 +1,22 @@
+#!/bin/ash
+
+uci set network.lan.proto='static'                                                                         
+uci set network.lan.ipaddr='{{ip_addr}}'                                                                  
+uci set network.lan.netmask='255.255.255.0'                                                                
+uci set network.lan.gateway='10.20.0.1'
+uci set system.@system[0].hostname='{{name}}' #validate A..Z a..z 0..9 _
+uci set wireless.radio0.disabled='0'
+uci set wireless.radio1.disabled='0'
+uci set wireless.radio0.channel='{{wifi_channel_5}}'  #validate {36..64}{100..140}{149..165} през 4
+uci set wireless.radio1.channel='{{wifi_channel_24}}' #validate {1..13}
+uci set wireless.radio0.txpower='{{power_5}}'
+uci set wireless.radio1.txpower='{{power_24}}'
+
+uci commit
+
+/etc/init.d/system restart
+/etc/init.d/network restart
+/etc/init.d/wpad restart
+/sbin/wifi reload
+/sbin/wifi up
+
